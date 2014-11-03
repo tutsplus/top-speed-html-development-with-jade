@@ -1,0 +1,161 @@
+// Kouto-Swiss library required to compile this file, easiest installed with NPM
+
+@import "node_modules/kouto-swiss/"
+
+$clr_bg_main = #fdfdfd
+$clr_text_main = #4b4b4b
+$clr_link_main = #136fd2
+
+$clr_dark_highlight = #2a3744
+$clr_light_highlight = #c0ccdb
+
+$typ_fontstack_main = "Helvetica"
+$typ_fontstack_code = "Monaco"
+
+/*
+	DEFAULT BODY STYLES
+*/
+body
+	background $clr_bg_main
+	font-family font-stack($typ_fontstack_main)
+	font-size 1em
+	line-height 1.625
+	color $clr_text_main
+	width 100%
+	margin 0
+	padding 0
+	-webkit-font-smoothing antialiased
+
+.wrapper
+	width 90%
+	margin 10px auto
+
+@media screen and (min-width: 768px)
+	.wrapper
+		width 650px
+		margin 30px auto
+
+section.wrapper
+	margin-top 40px
+	margin-bottom 100px
+
+/*
+	THE MAIN POST AREA
+*/
+.post
+	font-size 1.125em
+	line-height 1.44444em
+	padding 9em 0
+	ul
+		list-style-position outside
+
+.post-border
+	border-left 1px solid grey
+
+blockquote
+	opacity .65
+	border-left 2px solid #ddd
+	margin 0
+	padding-left 2em
+
+@media screen and (max-width: 600px)
+	.post
+		margin-left 0
+	blockquote
+		padding-left 1em
+
+
+/*
+	COUPLE OF TYPOGRAPHY PIECES WITHIN POST
+*/
+
+h1
+	font bold 2.722em/1em font-stack($typ_fontstack_main)
+	margin 0 0 .4725em
+	color $clr_dark_highlight
+	letter-spacing -.04em
+
+h2
+	font bold 2em/1em font-stack($typ_fontstack_main)
+	margin 0 0 .625em
+	color $clr_dark_highlight
+	letter-spacing -.04em
+
+h2, h3, h4
+	margin-top 30px
+
+@media screen and (max-width: 600px)
+	h2
+		font-size 1.75em
+
+a
+	color $clr_link_main
+	text-decoration none
+	&:hover
+		color $clr_link_main
+		text-decoration underline
+
+code
+	border solid 1px #e4e4e4
+	padding 4px 4px 1px
+	background #eef1f3
+	font-size 0.875em
+	line-height 1.85714em
+	border-radius 3px
+	font-family font-stack($typ_fontstack_code)
+
+/*
+	NOW FOR THE NAVIGATION BAR
+*/
+nav
+	background $clr_dark_highlight
+	width 100%
+	padding .5em 0
+	z-index 10
+	a
+		color $clr_light_highlight
+		display inline-block
+		font-size .8125em
+		line-height 1.2307em
+		text-decoration none
+		&:hover
+			color $clr_light_highlight
+			text-decoration underline
+	.global-nav__header-tuts-logo-link
+		img
+			width 70px
+			position relative
+			top 5px
+			margin-right 20px
+
+span.page-footer__tuts-brand-text
+	color $clr_light_highlight
+
+button
+	text-decoration none
+	outline none
+	border none
+	cursor pointer
+
+.addthis_toolbox
+	width 100%
+	padding 1em 0 0 0	
+
+#change-hang, 
+#change-border
+	display inline-block
+	padding 1px 16px
+	height 36px
+	line-height 34px
+	white-space nowrap
+	background-image linear-gradient( to bottom, #dee4e8, #dae1e5 )
+	color lighten($clr_text_main, 1%)
+	border-radius 4px
+	box-shadow 0px 1px 0px rgba(0,0,0,0.25)
+	width auto
+	&:hover
+		background $clr_light_highlight
+		color $clr_dark_highlight
+
+#change-border
+	margin-right 1.25em

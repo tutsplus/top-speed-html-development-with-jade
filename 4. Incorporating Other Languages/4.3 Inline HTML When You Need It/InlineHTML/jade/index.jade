@@ -1,0 +1,24 @@
+extends docwrapper
+
+//- Override any config settings by appending to the config block
+append config
+	- var PageTitle = 'Inline HTML'
+	- var MetaDesc = 'Learn how to use HTML inline in Jade'
+	- var jQuery = true
+
+block content
+	//- Variable used in text via interpolation
+	h1 #{PageTitle}
+
+	p Sometimes if you're writing Jade code you might find you want to use HTML inline.
+
+	p You can place HTML tags inline anywhere you have plain text.
+
+	p So that's text on the <em>same line</em> as a Jade tag.
+
+	p
+		| Or it's on any line you've started with the <strong>pipe ( | ) symbol</strong>.
+
+	p Being able to add HTML inline is particularly useful for things like embeded YouTube videos:
+
+	| <iframe width="560" height="315" src="//www.youtube.com/embed/-0jgx9nRWAA?rel=0" frameborder="0" allowfullscreen></iframe>

@@ -1,0 +1,113 @@
+extends docwrapper
+
+
+//- Override any config settings by appending to the config block
+append config
+	- var PageTitle = 'Create a Nav Menu Mixin'
+	- var MetaDesc = 'In this lesson create a Nav Menu mixin and also learn to use Jade’s “case” and “iteration” functionality in the process.'
+
+
+//- This mixin iterates through and creates each menu item
+mixin navmenu(menu_items)
+	.navmenu
+		ul
+			each top_item in menu_items
+				li
+					+navlinks(top_item)
+					if top_item.child
+						ul
+							each child_item in top_item.child
+								li
+									+navlinks(child_item)
+
+//- This mixin generates the links
+mixin navlinks(item)
+	- var linkatts = { 'href': item.link }
+	a()&attributes(linkatts)= item.title
+
+
+block content
+
+	//- Run mixin, passing a JS object through it from which to build the menu
+	+navmenu([
+		{ 'title':'Home', 'link':'index.htm' },
+		{ 'title':'About My Work', 'link':'about.htm',
+			'child': [
+				{ 'title':'Noteable Clients', 'link':'clients.htm' },
+				{ 'title':'Behance Portfolio', 'link':'http://www.behance.net', 'type':'out_follow' },
+				{ 'title':'Resume Download', 'link':'resume.doc', 'type': 'download' }
+			]
+		},
+		{ 'title':'Blog', 'link':'blog.htm' },
+		{ 'title': 'Contact', 'link':'http://www.hostedform.com', 'type':'out_nofollow' }
+	])
+
+
+
+
+
+
+
+	//- Here's a Stylus menu I prepared earlier
+	//- Don't mind the funky syntax highlighting, it's a mixed bag here
+	style
+		:stylus
+			$clr-border = #dcdcdc
+			$clr-interact = #728caa
+			.navmenu
+				font-family "Titillium Web"
+				font-size 1.1em
+				a
+					text-decoration none
+				ul
+					margin 0
+					padding 0
+					list-style none
+					display inline-table
+					position relative
+					white-space nowrap
+					padding 0 1em
+					border 1px solid $clr-border
+					border-radius 0.7em
+					background-color #fff
+					background-image linear-gradient(to top, #e1e1e1 0%, #f8f8f8 100%)
+					&:after
+						content: ""
+						clear both
+						display block
+					li
+						cursor pointer
+						list-style none
+						display block
+						float left
+						position relative
+						padding 0.85em 1.15em
+						border-right 1px solid $clr-border
+						background rgba(255,255,255,0.01)
+						a
+							color #666
+						&:first-of-type
+							border-left 1px solid $clr-border
+						&:hover
+							background-color $clr-interact
+							background-image none
+							a
+								color white
+							ul
+								display block
+						ul
+							background $clr-interact
+							position absolute
+							top 100%
+							left 0
+							padding 0
+							border-radius 0
+							border 0
+							display none
+							li
+								float none
+								padding 1em
+								&:first-of-type
+									border-left 0
+								&:hover
+									background lighten($clr-interact, 10%)

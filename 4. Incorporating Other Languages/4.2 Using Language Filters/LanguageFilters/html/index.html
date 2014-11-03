@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jade Language Filters
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allow multiple languages to compile all within Jade">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper"><a href="http://tutsplus.com" class="global-nav__header-tuts-logo-link"><img alt="tuts+" src="tuts_logo.svg" class="global-nav__header-tuts-logo-image"></a><span class="page-footer__tuts-brand-text"> Teaching skills to millions worldwide.</span></div>
+    </nav>
+    <section class="wrapper"><h1 id="-pagetitle-">Jade Language Filters</h1>
+<p>Write your content in <strong>Markdown</strong> format if it&#39;s your preferred syntax.</p>
+<p>Jade will recognize the language filter and compile the markdown for you, for example:</p>
+<h2 id="this-is-an-h2">This is an H2</h2>
+<ul>
+<li>List Items.</li>
+<li>List Items.</li>
+<li>List Items.</li>
+</ul>
+<p>This is an <a href="http://example.com/">example link</a>.</p>
+<p>This is an image <img src="/path/to/img.jpg" alt="alt text" title="Title"></p>
+
+      <h3>Do we have jQuery? (checking via coffescript)</h3><code id="gotjquery">Nope, no jQuery :(</code>
+      <script>(function() {
+  if (window.jQuery) {
+    $('#gotjquery').html("Yes, we have jQuery");
+  }
+
+}).call(this);
+
+      </script>
+      <div class="stylusbox">This box is formatted with<br>inline <span>Stylus </span>code</div>
+      <style>.stylusbox {
+  background: #ececec;
+  color: #606060;
+  border: 0.0625em solid #d4d4d4;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Open Sans";
+  padding: 1em;
+  margin: 1em;
+}
+.stylusbox span {
+  color: #b3d107;
+}
+
+      </style>
+      <div class="lessbox">This box is formatted with<br>inline <span>LESS </span>code</div>
+      <style>.lessbox {
+  background: #1D365D;
+  color: #B9C8E0;
+  border: 0.0625em solid #111f36;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Open Sans";
+  padding: 1em;
+  margin: 1em;
+}
+.lessbox span {
+  color: #fff;
+}
+
+      </style>
+    </section>
+  </body>
+</html>

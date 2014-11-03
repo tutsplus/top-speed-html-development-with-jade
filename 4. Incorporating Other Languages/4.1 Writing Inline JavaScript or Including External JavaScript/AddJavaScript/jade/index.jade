@@ -1,0 +1,25 @@
+extends docwrapper
+
+//- Override any config settings by appending to the config block
+append config
+	- var PageTitle = 'Add JavaScript'
+	- var MetaDesc = 'Add JS either inline or via includes'
+	- var jQuery = true
+
+block content
+	//- Variable used in text via interpolation
+	h1 #{PageTitle}
+	
+	h3 Do we have jQuery?
+	
+	code#gotjquery Nope, no jQuery :(
+
+	//- Write JS inline by prefacing it with: script.
+	script.
+		if (window.jQuery) {  
+			$('#gotjquery').html("Yes, we have jQuery");
+		}
+
+	//- Or, include external JS and have it render inline
+	script
+		include rspn-iframes.js

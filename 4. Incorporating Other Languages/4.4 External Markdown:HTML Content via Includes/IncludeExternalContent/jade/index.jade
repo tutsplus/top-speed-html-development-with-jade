@@ -1,0 +1,10 @@
+extends docwrapper
+
+//- Override any config settings by appending to the config block
+append config
+	- var PageTitle = 'External Content'
+	- var MetaDesc = 'Include external HTML or Markdown for neat content creation'
+
+block content
+	include:markdown content/external_markdown.md
+	include content/external_html.html

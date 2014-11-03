@@ -1,0 +1,37 @@
+extends docwrapper
+
+block append meta
+	meta( name='description', content='Append and Prepend Blocks with Jade' )
+
+block append stylesheets
+	link( href='css/linkcolor.css', rel='stylesheet', type='text/css' )
+
+block title
+	| Append and Prepend Blocks
+
+//- block append headertext
+//- 	| ...appended to header
+
+//- block prepend headertext
+//- 	| prepended to header...
+
+append headertext
+	| ...appended to header
+
+prepend headertext
+	| prepended to header...
+
+block content
+	h1
+		block title
+
+	p If you’re not using Jade, you’re missing out on some of the fastest HTML you’ll ever produce as well as boilerplate templating methods that will slash your development time in half.
+
+	ul
+		li: a Link One
+		li: a Link Two
+		li: a Link Three
+		li: a Link Four
+		li: a Link Five
+
+	p In “Top Speed HTML Dev with Jade” you’ll learn how to generate full HTML from quick and easy shorthand. You’ll then build on that foundation to create infinitely reusable templates so you never write the same code twice again. Let’s begin!

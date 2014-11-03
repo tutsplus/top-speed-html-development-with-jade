@@ -1,0 +1,23 @@
+doctype
+html( lang="en" )
+	head
+		title
+			block title
+		block meta
+			meta( charset='utf-8' )
+			meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+			meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		block stylesheets
+			link( href='css/style.css', rel='stylesheet', type='text/css' )
+	body
+		nav
+			.wrapper
+				a.global-nav__header-tuts-logo-link(href="http://tutsplus.com")
+					img.global-nav__header-tuts-logo-image(alt="tuts+", src="tuts_logo.svg")
+				span.page-footer__tuts-brand-text
+					//- Header text here
+					block headertext
+						| Default Header Text
+		section.wrapper
+			//- Content here
+			block content

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create a Nav Menu Mixin
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In this lesson create a Nav Menu mixin and also learn to use Jade’s “case” and “iteration” functionality in the process.">
+    <link href="//fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper"><a href="http://tutsplus.com" class="global-nav__header-tuts-logo-link"><img alt="tuts+" src="tuts_logo.svg" class="global-nav__header-tuts-logo-image"></a><span class="page-footer__tuts-brand-text"> Teaching skills to millions worldwide.</span></div>
+    </nav>
+    <section class="wrapper">
+      <div class="navmenu">
+        <ul>
+          <li><a href="index.htm" target="_top" rel="follow">Home</a>
+          </li>
+          <li><a href="about.htm" target="_top" rel="follow">About My Work</a>
+            <ul>
+              <li><a href="clients.htm" target="_top" rel="follow">Noteable Clients</a>
+              </li>
+              <li><a href="http://www.behance.net" target="_blank" rel="follow">Behance Portfolio</a>
+              </li>
+              <li><a href="resume.doc" target="_top" rel="nofollow">Resume Download</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="blog.htm" target="_top" rel="follow">Blog</a>
+          </li>
+          <li><a href="http://www.hostedform.com" target="_blank" rel="nofollow">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <style>.navmenu {
+  font-family: "Titillium Web";
+  font-size: 1.1em;
+}
+.navmenu a {
+  text-decoration: none;
+}
+.navmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-table;
+  position: relative;
+  white-space: nowrap;
+  padding: 0 1em;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.7em;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e1e1e1 0%, #f8f8f8 100%);
+}
+.navmenu ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.navmenu ul li {
+  cursor: pointer;
+  list-style: none;
+  display: block;
+  float: left;
+  position: relative;
+  padding: 0.85em 1.15em;
+  border-right: 1px solid #dcdcdc;
+  background: rgba(255,255,255,0.01);
+}
+.navmenu ul li a {
+  color: #666;
+}
+.navmenu ul li:first-of-type {
+  border-left: 1px solid #dcdcdc;
+}
+.navmenu ul li:hover {
+  background-color: #728caa;
+  background-image: none;
+}
+.navmenu ul li:hover a {
+  color: #fff;
+}
+.navmenu ul li:hover ul {
+  display: block;
+}
+.navmenu ul li ul {
+  background: #728caa;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  display: none;
+}
+.navmenu ul li ul li {
+  float: none;
+  padding: 1em;
+}
+.navmenu ul li ul li:first-of-type {
+  border-left: 0;
+}
+.navmenu ul li ul li:hover {
+  background: #8098b3;
+}
+
+      </style>
+    </section>
+  </body>
+</html>

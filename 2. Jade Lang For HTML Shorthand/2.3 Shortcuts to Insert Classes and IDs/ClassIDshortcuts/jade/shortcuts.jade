@@ -1,0 +1,28 @@
+//- Add a class name like this
+div.classname Text Content
+
+//- Add an ID in the same way, just with a #
+div#idname Text Content
+
+//- This works with any HTML element
+h1.maintitle
+p.firstpar
+a.highlight
+span.smaller
+
+//- Divs are the default element, so you can just use a class or ID
+.divwithclass
+
+#divwithid
+
+//- This all works with nesting
+
+.parentdiv
+	#childdiv
+		#grandchild
+
+//- You can also have multiple class names and a single ID chained together
+
+.classone.classtwo.classthree#idname
+
+#idname.classone.classtwo.classthree

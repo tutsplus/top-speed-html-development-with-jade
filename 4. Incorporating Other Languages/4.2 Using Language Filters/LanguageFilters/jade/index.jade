@@ -1,0 +1,81 @@
+extends docwrapper
+
+//- Override any config settings by appending to the config block
+append config
+	- var PageTitle = 'Jade Language Filters'
+	- var MetaDesc = 'Allow multiple languages to compile all within Jade'
+	- var jQuery = true
+
+block content
+	//- Variable used in text via interpolation, still works inside markdown
+	:markdown
+		# #{PageTitle}
+
+		Write your content in **Markdown** format if it's your preferred syntax.
+
+		Jade will recognize the language filter and compile the markdown for you, for example:
+
+		This is an H2
+		-------------
+
+		*   List Items.
+		*   List Items.
+		*   List Items.
+
+		This is an [example link](http://example.com/).
+
+	//- Use CoffeeScript inline
+	h3 Do we have jQuery? (checking via coffescript)
+	
+	code#gotjquery Nope, no jQuery :(
+
+	//- Don't use a dot after script when nesting the :coffee filter inside
+	script
+		:coffee
+			$('#gotjquery').html "Yes, we have jQuery" if window.jQuery
+
+	//- Use Stylus inline
+	.stylusbox This box is formatted with
+		br
+		| inline 
+		span Stylus 
+		| code
+
+	style
+		:stylus
+			.stylusbox
+				background #ECECEC
+				color #606060
+				border 0.0625em solid darken(@background, 10%)
+				text-align center
+				font-size 2em
+				font-weight bold
+				font-family "Open Sans"
+				padding 1em
+				margin 1em
+				span
+					color #B3D107
+
+	//- Use LESS inline
+	.lessbox This box is formatted with
+		br
+		| inline 
+		span LESS 
+		| code
+
+	style
+		:less
+			.lessbox {
+				background: #1D365D;
+				color: #B9C8E0;
+				border: 0.0625em solid darken(#1D365D, 10%);
+				text-align: center;
+				font-size: 2em;
+				font-weight: bold;
+				font-family: "Open Sans";
+				padding: 1em;
+				margin: 1em;
+				span {
+					color: #fff;
+				}
+			}

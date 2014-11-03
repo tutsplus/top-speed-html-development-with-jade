@@ -1,0 +1,49 @@
+extends docwrapper
+
+//- Override any config settings by appending to the config block
+append config
+	- var MetaDesc = 'Learn how to use JavaScript processes with Jade variables'
+
+	//- Push an extra class name into the "BodyClasses" array
+	//- Can't use "- var bodyClass = bodyClass.push('extraclass')"
+	//- because the push() function returns the length of the array rather than the array itself
+	- var updateBodyClass = BodyClasses.push('extraclass')
+
+	//- Concatenate an extra font name onto the Google Fonts being loaded
+	- var GoogleFonts = GoogleFonts.concat('|Poiret+One')
+
+	//- Create title for current page and concatenate it to the meta title variable
+	- var thisPage = 'JS Processes and Jade Vars'
+	- var PageTitle = PageTitle.concat(' | ' + thisPage)
+
+block content
+	//- Variable used in text via interpolation
+	h1 #{thisPage}
+
+	p The default "PageTitle" set in the config was: 
+		code Learn Jade
+
+	p The title we've set for "thisPage" is 
+		code #{thisPage}
+
+	p Notice how the two are concatenated together in the meta title?
+
+	p The new meta title is: 
+		code #{PageTitle}
+
+	p(style="font-family:Poiret One;font-size:2em") By concatenating to the "GoogleFonts" variable we've also loaded the extra font Poiret One
+
+	p You can also use JavaScript math processes on Jade vars. For example, let's start with the number:
+
+	- var start_num = 2254.3665
+
+		code #{start_num}
+
+	p Now let's use JavaScript's <code>floor()</code> method to round it down to the nearest whole number:
+
+	- var rounded_down = Math.floor(start_num)
+
+		code #{rounded_down}
+
+
+

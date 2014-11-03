@@ -1,0 +1,40 @@
+block config
+	include config.jade
+
+doctype
+html( lang="en" )
+	head
+		title
+			block title
+				//- Variable used in text via interpolation
+				| #{PageTitle}
+		
+		meta( charset='utf-8' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		//- Meta description drawn from config file
+		meta( name='description', content=MetaDesc )
+		
+		//- This will load from Google Fonts, but only if font names are specified in the config
+		if GoogleFonts
+			link( href='//fonts.googleapis.com/css?family=' + GoogleFonts, rel='stylesheet', type='text/css' )
+		
+		//- This will load jQuery, but only if you switch it on in config
+		if jQuery
+			script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+		
+		block stylesheets
+			link( href='css/style.css', rel='stylesheet', type='text/css' )
+	
+	body(class=BodyClasses)
+		nav
+			.wrapper
+				a.global-nav__header-tuts-logo-link(href="http://tutsplus.com")
+					img.global-nav__header-tuts-logo-image(alt="tuts+", src="tuts_logo.svg")
+				span.page-footer__tuts-brand-text
+					//- Header text here
+					block headertext
+						|  Teaching skills to millions worldwide.
+		section.wrapper
+			//- Content here
+			block content

@@ -1,0 +1,36 @@
+//
+//- Attributes on a single line, comma separated
+
+a( href='link.html', target='_blank', rel='nofollow')
+
+//
+//- Atts on multiple lines, no comma required
+a(
+	href='link.html'
+	target='_blank'
+	rel='nofollow'
+)
+
+//
+//- ID and classes added in the regular shortcut way
+a.classone.classtwo#idname( href='link.html', target='_blank', rel='nofollow')
+
+//
+//- ID and class added in atts list
+a( class='classone classtwo', id='idname', href='link.html', target='_blank', rel='nofollow' )
+
+//
+//- Tag attributes are processed as regular JavaScript meaning you can use JS syntax to set their values, such as using arrays to set classes
+a( class=['classone', 'classtwo'], id='idname', href='link.html', target='_blank', rel='nofollow' )
+
+//
+//- If you prefer, you can also use the &attributes syntax to set all tag attributes via a JS object
+a()&attributes({
+	'id': 'idname',
+	'href': 'link.html',
+	'target': '_blank',
+	'rel': 'nofollow',
+	'class': ['classone', 'classtwo']
+})
+
+//- The above two methods are particularly useful when incorporating variables, which are covered in a later lesson

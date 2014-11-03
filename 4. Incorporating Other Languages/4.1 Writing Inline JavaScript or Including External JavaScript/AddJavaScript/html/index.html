@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add JS either inline or via includes">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper"><a href="http://tutsplus.com" class="global-nav__header-tuts-logo-link"><img alt="tuts+" src="tuts_logo.svg" class="global-nav__header-tuts-logo-image"></a><span class="page-footer__tuts-brand-text"> Teaching skills to millions worldwide.</span></div>
+    </nav>
+    <section class="wrapper">
+      <h1>Add JavaScript</h1>
+      <h3>Do we have jQuery?</h3><code id="gotjquery">Nope, no jQuery :(</code>
+      <script>
+        if (window.jQuery) {  
+        	$('#gotjquery').html("Yes, we have jQuery");
+        }
+        
+      </script>
+      <script>(function() {
+  jQuery(function($) {
+    var responsiveIframe;
+    responsiveIframe = function() {
+      return $('iframe').each(function() {
+        var ih, ip, ipw, ipwh, iw;
+        iw = $(this).width();
+        ih = $(this).height();
+        ip = $(this).parent().width();
+        ipw = ip / iw;
+        ipwh = Math.round(ih * ipw);
+        return $(this).css({
+          'width': ip,
+          'height': ipwh
+        });
+      });
+    };
+    responsiveIframe();
+    return $(window).resize(function() {
+      return responsiveIframe();
+    });
+  });
+
+}).call(this);
+
+      </script>
+    </section>
+  </body>
+</html>

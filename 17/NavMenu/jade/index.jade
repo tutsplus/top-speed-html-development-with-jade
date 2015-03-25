@@ -22,8 +22,7 @@ mixin navmenu(menu_items)
 
 //- This mixin generates the links
 mixin navlinks(item)
-	- var linkatts = { 'href': item.link }
-	a()&attributes(linkatts)= item.title
+	a( href=item.link )= item.title
 
 
 block content
